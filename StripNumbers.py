@@ -15,7 +15,7 @@ for file in os.listdir():
             del fileName[0]
             fileName[0] = fileName[0].strip()
 
-        fileName = "{}".format(" ".join(fileName))
+        fileName = " ".join(fileName)
 
     if fileName.startswith("0") or fileName.startswith("1"):
         fileName = fileName.split("-")
@@ -24,7 +24,7 @@ for file in os.listdir():
             del fileName[0]
             fileName[0] = fileName[0].strip()
 
-        fileName = "{}".format(" ".join(fileName))
+        fileName = " ".join(fileName)
 
     if fileName.startswith("0") or fileName.startswith("1"):
         fileName = fileName.split()
@@ -32,5 +32,5 @@ for file in os.listdir():
             print("Changing the numbers separated by ' ' ", fileName)
             del fileName[0]
 
-        fileName = "{}".format(" ".join(fileName))
+            fileName = " ".join(fileName)
     os.rename(file, "{}{}".format(fileName, fileExtension))
