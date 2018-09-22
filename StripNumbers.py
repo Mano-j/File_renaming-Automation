@@ -21,6 +21,7 @@ for file in os.listdir():
         if len(fileName[0]) <= 2:
             print("Changing the numbers separated by '.' ", fileName)
             del fileName[0]
+            fileName[0] = fileName[0].strip()
 
         fileName = "{}".format(" ".join(fileName))
 
@@ -29,6 +30,7 @@ for file in os.listdir():
         if len(fileName[0]) <= 2:
             print("Changing the numbers separated by '-' ", fileName)
             del fileName[0]
+            fileName[0] = fileName[0].strip()
 
         fileName = "{}".format(" ".join(fileName))
 
