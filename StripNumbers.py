@@ -9,14 +9,6 @@ for file in os.listdir():
     fileName, fileExtension = os.path.splitext(file)
 
     if fileName.startswith("0") or fileName.startswith("1"):
-        fileName = fileName.split()
-        if len(fileName[0]) <= 2:
-            print("Changing the numbers separated by ' ' ", fileName)
-            del fileName[0]
-
-        fileName = "{}".format(" ".join(fileName))
-
-    if fileName.startswith("0") or fileName.startswith("1"):
         fileName = fileName.split(".")
         if len(fileName[0]) <= 2:
             print("Changing the numbers separated by '.' ", fileName)
@@ -34,4 +26,11 @@ for file in os.listdir():
 
         fileName = "{}".format(" ".join(fileName))
 
+    if fileName.startswith("0") or fileName.startswith("1"):
+        fileName = fileName.split()
+        if len(fileName[0]) <= 2:
+            print("Changing the numbers separated by ' ' ", fileName)
+            del fileName[0]
+
+        fileName = "{}".format(" ".join(fileName))
     os.rename(file, "{}{}".format(fileName, fileExtension))
