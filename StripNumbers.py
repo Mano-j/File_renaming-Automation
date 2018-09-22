@@ -1,6 +1,7 @@
 import os
 
-path = "E:\python exp\\new"
+# Set the path variable to the path of the directory you want to operate on.
+path = "_replace_the_path_to_the_dir_"
 os.chdir(path)
 
 for f in os.listdir():
