@@ -4,34 +4,32 @@ import os
 path = "_replace_the_path_to_the_dir_"
 os.chdir(path)
 
-for f in os.listdir():
+for file in os.listdir():
 
-    fileName, fileExtension = os.path.splitext(f)
+    fileName, fileExtension = os.path.splitext(file)
 
     if fileName.startswith("0") or fileName.startswith("1"):
         fileName = fileName.split()
         if len(fileName[0]) <= 2:
-            print("-------inside (' ')", fileName)
+            print("Changing the numbers separated by ' ' ", fileName)
             del fileName[0]
 
         fileName = "{}".format(" ".join(fileName))
-        print("-------inside (' ')", fileName)
 
     if fileName.startswith("0") or fileName.startswith("1"):
         fileName = fileName.split(".")
         if len(fileName[0]) <= 2:
-            print("++++++ inside (.) ", fileName)
+            print("Changing the numbers separated by '.' ", fileName)
             del fileName[0]
 
         fileName = "{}".format(" ".join(fileName))
-        print("++++++ inside (.) ", fileName)
 
     if fileName.startswith("0") or fileName.startswith("1"):
         fileName = fileName.split("-")
         if len(fileName[0]) <= 2:
-            print("++++++ inside (-) ", fileName)
+            print("Changing the numbers separated by '-' ", fileName)
             del fileName[0]
 
         fileName = "{}".format(" ".join(fileName))
-        print("++++++ inside (-) ", fileName)
-    os.rename(f, "{}{}".format(fileName, fileExtension))
+
+    os.rename(file, "{}{}".format(fileName, fileExtension))
